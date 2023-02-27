@@ -1,0 +1,19 @@
+<div id="testdiv">
+    <h1>Namaste...</h1>
+    <a>Test anchor tag</a>
+</div>
+<h2>Hey..</h2>
+<?php
+$formData = [
+    'divElement'       =>  '#testdiv',
+];
+$serializedFormData = $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($formData);
+echo "Hello";
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "usetestrequire": <?php  echo $serializedFormData; ?>
+        }
+    }
+</script>
